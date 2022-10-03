@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slyk26</title>
+    <style>
+        @font-face {
+            font-family: 'JetBrains Mono';
+            src: url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff2/JetBrainsMono-Bold.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff/JetBrainsMono-Bold.woff') format('woff');
+            font-style: normal;
+            font-display: swap;
+        }
+
+        /* width */
+        ::-webkit-scrollbar {
+            width: 15px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #2d3030;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #fff;
+        }
+
+        html {
+            scroll-snap-type: y mandatory;
+            overflow-y: scroll;
+            scroll-behavior: smooth;
+        }
+
+        * {
+            background-color: #232525;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            font-family: 'JetBrains Mono';
+        }
+
+        a {
+            padding: 5px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            font-weight: bold;
+        }
+
+        h2>a {
+            color: #CC7832;
+            text-decoration: underline;
+        }
+
+        h2>a:hover {
+            font-weight: 900px;
+        }
+
+        .flex,
+        .flex-row {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 20px;
+        }
+
+        section {
+            scroll-snap-align: start;
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .vertical-center {
+            position: relative;
+            top: 50%;
+            transform: translate(0, -50%);
+        }
+
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            background-color: #232525;
+
+        }
+
+        @media screen and (max-width: 800px) {
+            .flex {
+                flex-direction: column;
+                gap: 5px
+            }
+        }
+
+        #repos {
+            border: 2px solid;
+            max-height: 80vh;
+            overflow: scroll;
+        }
+
+        #repos>p {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .social {
+            border: 2px solid white;
+            width: 200px;
+        }
+
+        .social>a:hover {
+            color: #CC7832;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <div class="flex-row">
+            <a href="#me">> slyk26</a>
+            <a href="#tools">> Tools</a>
+            <a href="#projects">> Projects</a>
+            <a href="#contact">> Contact</a>
+        </div>
+        <hr>
+    </div>
+
+    <section id="me">
+        <div class="vertical-center">
+            <img id="emote" src="#" alt=" ">
+            <h1>efficient - lazy - simple</h1>
+            <p><span id="age"></span> y/o fullstack dev</p>
+            <p>TypeScript and C++ enjoyer</p>
+            <p>frontend dev is my passion <span><img style="margin-bottom: -10px"
+                        src="https://cdn.betterttv.net/emote/6194380154f3344f8805f22f/1x"></span></p>
+        </div>
+    </section>
+
+    <section id="tools">
+        <div class="vertical-center">
+            <h1>I work with</h1>
+
+            <div class="flex">
+                <img src="https://dwglogo.com/wp-content/uploads/2017/11/IntelliJ_IDEA_logo-768x768.png" alt="intellij"
+                    height="128px" width="128px">
+                <img src="https://static-00.iconduck.com/assets.00/file-type-vscode-icon-512x508-376y62ux.png"
+                    alt="vscode" height="128px" width="128px">
+                <img src="https://s3.getstickerpack.com/storage/uploads/sticker-pack/pepe-the-frog/sticker_4.png"
+                    alt="brain" height="128px" width="128px">
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="vertical-center">
+            <h1><img style="margin-bottom: -6px"
+                    src="https://findicons.com/files/icons/2779/simple_icons/2048/github.png" height="32px"
+                    width="32px"> Github Projects</h1>
+            <div id="repos"></div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="vertical-center">
+            <h1>Contact</h1>
+            <p> >> no social media << </p>
+            <div class="flex">
+                <div class="social">
+                    <img height="128px" width="128px" alt="discord"
+                        src="https://media.discordapp.net/attachments/1016265021241692180/1026529612148256848/image_proxy.png">
+                    <p>slyk26#2197</p>
+                </div>
+                <a href="https://steamcommunity.com/id/slyk26/" target="_blank">
+                    <div class="social">
+                        <img alt="steam" src="https://cdn.discordapp.com/attachments/1016265021241692180/1026529827076984883/steam.png"
+                            height="128px" width="128px">
+                        <p>slyk26</p>
+                    </div>
+                </a>
+                <a href="mailto:slyk26@proton.me" target="_blank">
+                    <div class="social">
+                        <img alt="email"
+                            src="https://cdn1.iconfinder.com/data/icons/aami-flat-emails/64/email-09-512.png"
+                            height="128px" width="128px">
+                        <p>slyk26@proton.me</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+</body>
+
+<script>
+    let age = new Date(new Date() - new Date(2001, 07, 26)).getFullYear() - 1970;
+    document.getElementById('age').textContent = age;
+
+    let done = false;
+    const http = new XMLHttpRequest();
+    let simplifiedRepos = [];
+    const repoUrl = 'https://api.github.com/users/slyk26/repos';
+    http.open("GET", repoUrl);
+    http.send();
+    http.onreadystatechange = (e) => {
+        if (http.readyState == 4 && !done) {
+            done = true;
+            if (http.responseText != null && http.responseText != '') {
+                let data = JSON.parse(http.responseText);
+                data.forEach(repo => {
+                    simplifiedRepos.push({
+                        name: repo.name,
+                        description: repo.description,
+                        url: repo.html_url
+                    })
+                });
+                simplifiedRepos.forEach(repo => {
+                    let parent = document.getElementById('repos');
+                    let heading = document.createElement('h2');
+                    let link = document.createElement('a');
+                    let text = document.createElement('p');
+
+                    link.textContent = '>' + repo.name;
+                    link.href = repo.url;
+                    link.target = '_blank';
+
+                    text.textContent = repo.description;
+                    heading.appendChild(link);
+                    parent.appendChild(heading);
+                    parent.appendChild(text);
+                })
+            }
+        }
+    }
+    let http2 = new XMLHttpRequest();
+    let limit = 87;
+    let intervall = 5000;
+    const emoteUrl = 'https://api.betterttv.net/3/emotes/shared/trending?offset=0&limit=' + limit;
+    const cdnUrl = 'https://cdn.betterttv.net/emote/';
+    let emotes = [];
+    http2.open("GET", emoteUrl);
+    http2.send();
+    http2.onreadystatechange = (e) => {
+        if (http2.readyState == 4) {
+            if (http2.responseText != null && http2.responseText != '') {
+                let data = JSON.parse(http2.responseText);
+                data.forEach(emote => {
+                    emotes.push(cdnUrl + emote.emote.id + '/3x');
+                });
+                setRandomEmote();
+            }
+            setInterval(setRandomEmote, intervall);
+        }
+    }
+
+    function setRandomEmote() {
+        document.getElementById('emote').setAttribute('src', emotes[Math.floor(Math.random() * limit)]);
+    }
+</script>
+
+</html>
