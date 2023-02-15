@@ -248,9 +248,8 @@
         }
     }
     let http2 = new XMLHttpRequest();
-    let limit = 87;
     let intervall = 5000;
-    const emoteUrl = 'https://api.betterttv.net/3/emotes/shared/trending?offset=0&limit=' + limit;
+    const emoteUrl = 'https://api.betterttv.net/3/emotes/shared/trending';
     const cdnUrl = 'https://cdn.betterttv.net/emote/';
     let emotes = [];
     http2.open("GET", emoteUrl);
@@ -269,7 +268,7 @@
     }
 
     function setRandomEmote() {
-        document.getElementById('emote').setAttribute('src', emotes[Math.floor(Math.random() * limit)]);
+        document.getElementById('emote').setAttribute('src', emotes[Math.floor(Math.random() * emotes.length)]);
     }
 </script>
 
