@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="https://cdn.betterttv.net/emote/60cf97958ed8b373e4216f05/1x.webp"/>
     <title>slyk26</title>
     <style>
         @font-face {
             font-family: 'JetBrains Mono';
             src: url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff2/JetBrainsMono-Bold.woff2') format('woff2'),
-                url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff/JetBrainsMono-Bold.woff') format('woff');
+            url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff/JetBrainsMono-Bold.woff') format('woff');
             font-style: normal;
             font-display: swap;
         }
@@ -46,7 +47,7 @@
             color: white;
             text-decoration: none;
             text-align: center;
-            font-family: 'JetBrains Mono';
+            font-family: 'JetBrains Mono', monospace;
         }
 
         a {
@@ -62,13 +63,13 @@
             font-weight: bold;
         }
 
-        h2>a {
+        h2 > a {
             color: #CC7832;
             text-decoration: underline;
         }
 
-        h2>a:hover {
-            font-weight: 900px;
+        h2 > a:hover {
+            font-weight: 900;
         }
 
         .flex,
@@ -94,6 +95,15 @@
             transform: translate(0, -50%);
         }
 
+        .footer {
+            position: fixed;
+            padding: 5px;
+            top: calc(100vh - 50px);
+            z-index: 1;
+            width: 100%;/
+            background-color: #232525;
+        }
+
         .nav {
             position: sticky;
             top: 0;
@@ -115,7 +125,7 @@
             overflow: scroll;
         }
 
-        #repos>p {
+        #repos > p {
             padding-left: 20px;
             padding-right: 20px;
         }
@@ -125,91 +135,102 @@
             width: 200px;
         }
 
-        .social>a:hover {
+        .social > a:hover {
             color: #CC7832;
+        }
+
+        .inline-emoji {
+            margin-bottom: -6px;
         }
     </style>
 </head>
 
 <body>
-    <div class="nav">
-        <div class="flex-row">
-            <a href="#me">> slyk26</a>
-            <a href="#tools">> Tools</a>
-            <a href="#projects">> Projects</a>
-            <a href="#contact">> Contact</a>
-        </div>
-        <hr>
+<div class="nav">
+    <div class="flex-row">
+        <a href="#me">> slyk26</a>
+        <a href="#tools">> Tools</a>
+        <a href="#projects">> Projects</a>
+        <a href="#contact">> Contact</a>
     </div>
+    <hr>
+</div>
 
-    <section id="me">
-        <div class="vertical-center">
-            <img id="emote" src="#" alt=" ">
-            <h1>efficient - lazy - simple</h1>
-            <p><span id="age"></span> y/o fullstack dev</p>
-            <p>TypeScript and C++ enjoyer</p>
-            <p>frontend dev is my passion <span><img style="margin-bottom: -10px"
-                        src="https://cdn.betterttv.net/emote/6194380154f3344f8805f22f/1x"></span></p>
+<section id="me">
+    <div class="vertical-center">
+        <img id="emote" src="#" alt="funny emote hAHA">
+        <p><span id="age"></span> y/o software engineer</p>
+        <p>not a 9 to 5 wagie
+            <span>
+            <img class="inline-emoji" src="https://cdn.betterttv.net/emote/60f0edec8ed8b373e42231b2/1x"
+                 alt="xd">
+            </span>
+        </p>
+        <p>I'm extracting code
+            <span>
+            <img class="inline-emoji"
+                 alt="motivated"
+                 src="https://cdn.betterttv.net/emote/5e74e336d6581c3724c0d49d/1x">
+                oO(
+                <img alt="sad"
+                     src="https://cdn.betterttv.net/emote/5a6dee3b2620951f291ec6d0/1x" width="16px" height="16px">
+                )
+            </span>
+        </p>
+    </div>
+</section>
+
+<section id="tools">
+    <div class="vertical-center">
+        <h1>I work with</h1>
+
+        <div class="flex">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/IntelliJ_IDEA_Icon.svg"
+                 alt="intellij"
+                 height="128px" width="128px">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Vimlogo.svg"
+                 height="128px" width="128px" alt="vim">
+            <img src="https://s3.getstickerpack.com/storage/uploads/sticker-pack/pepe-the-frog/sticker_4.png"
+                 alt="giga brain" height="128px" width="128px">
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="tools">
-        <div class="vertical-center">
-            <h1>I work with</h1>
+<section id="projects">
+    <div class="vertical-center">
+        <h1><img class="inline-emoji"
+                 src="https://github.com/fluidicon.png" height="32px"
+                 width="32px" alt="gh logo"> Github Sins</h1>
+        <div id="repos"></div>
+    </div>
+</section>
 
-            <div class="flex">
-                <img src="https://dwglogo.com/wp-content/uploads/2017/11/IntelliJ_IDEA_logo-768x768.png" alt="intellij"
-                    height="128px" width="128px">
-                <img src="https://static-00.iconduck.com/assets.00/file-type-vscode-icon-512x508-376y62ux.png"
-                    alt="vscode" height="128px" width="128px">
-                <img src="https://s3.getstickerpack.com/storage/uploads/sticker-pack/pepe-the-frog/sticker_4.png"
-                    alt="brain" height="128px" width="128px">
-            </div>
-        </div>
-    </section>
-
-    <section id="projects">
-        <div class="vertical-center">
-            <h1><img style="margin-bottom: -6px"
-                    src="https://findicons.com/files/icons/2779/simple_icons/2048/github.png" height="32px"
-                    width="32px"> Github Projects</h1>
-            <div id="repos"></div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <div class="vertical-center">
-            <h1>Contact</h1>
-            <p> >> no social media << </p>
-            <div class="flex">
+<section id="contact">
+    <div class="vertical-center">
+        <h1>Contact</h1>
+        <p> >> no social media << </p>
+        <div class="flex">
+            <a href="mailto:slyk26@proton.me" target="_blank">
                 <div class="social">
-                    <img height="128px" width="128px" alt="discord"
-                        src="https://media.discordapp.net/attachments/1016265021241692180/1026529612148256848/image_proxy.png">
-                    <p>slyk26#2197</p>
+                    <img alt="email"
+                         src="https://cdn1.iconfinder.com/data/icons/aami-flat-emails/64/email-09-512.png"
+                         height="128px" width="128px">
+                    <p>slyk26@proton.me</p>
                 </div>
-                <a href="https://steamcommunity.com/id/slyk26/" target="_blank">
-                    <div class="social">
-                        <img alt="steam" src="https://cdn.discordapp.com/attachments/1016265021241692180/1026529827076984883/steam.png"
-                            height="128px" width="128px">
-                        <p>slyk26</p>
-                    </div>
-                </a>
-                <a href="mailto:slyk26@proton.me" target="_blank">
-                    <div class="social">
-                        <img alt="email"
-                            src="https://cdn1.iconfinder.com/data/icons/aami-flat-emails/64/email-09-512.png"
-                            height="128px" width="128px">
-                        <p>slyk26@proton.me</p>
-                    </div>
-                </a>
-            </div>
+            </a>
         </div>
-    </section>
+    </div>
+</section>
+
+<footer class="footer">
+    <p> made with <span><img src="https://cdn.betterttv.net/emote/6096a3d739b5010444d0dda0/1x.webp"
+                             height="16px" width="16px" alt="love"></span> and hi hatrickek</p>
+</footer>
 </body>
 
 <script>
-    let age = new Date(new Date() - new Date(2001, 07, 26)).getFullYear() - 1970;
-    document.getElementById('age').textContent = age;
+    let age = new Date(new Date() - new Date(2001, 7, 26)).getFullYear() - 1970;
+    document.getElementById('age').textContent = String(age);
 
     let done = false;
     const http = new XMLHttpRequest();
@@ -217,10 +238,10 @@
     const repoUrl = 'https://api.github.com/users/slyk26/repos';
     http.open("GET", repoUrl);
     http.send();
-    http.onreadystatechange = (e) => {
-        if (http.readyState == 4 && !done) {
+    http.onreadystatechange = () => {
+        if (http.readyState === 4 && !done) {
             done = true;
-            if (http.responseText != null && http.responseText != '') {
+            if (http.responseText != null && http.responseText !== '') {
                 let data = JSON.parse(http.responseText);
                 data.forEach(repo => {
                     simplifiedRepos.push({
@@ -248,22 +269,22 @@
         }
     }
     let http2 = new XMLHttpRequest();
-    let intervall = 5000;
+    let interval = 5000;
     const emoteUrl = 'https://api.betterttv.net/3/emotes/shared/trending';
     const cdnUrl = 'https://cdn.betterttv.net/emote/';
     let emotes = [];
     http2.open("GET", emoteUrl);
     http2.send();
-    http2.onreadystatechange = (e) => {
-        if (http2.readyState == 4) {
-            if (http2.responseText != null && http2.responseText != '') {
+    http2.onreadystatechange = () => {
+        if (http2.readyState === 4) {
+            if (http2.responseText != null && http2.responseText !== '') {
                 let data = JSON.parse(http2.responseText);
                 data.forEach(emote => {
                     emotes.push(cdnUrl + emote.emote.id + '/3x');
                 });
                 setRandomEmote();
             }
-            setInterval(setRandomEmote, intervall);
+            setInterval(setRandomEmote, interval);
         }
     }
 
