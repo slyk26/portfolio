@@ -169,7 +169,7 @@
     </p>
 </footer>
 <script>
-    let age = new Date().getFullYear() - new Date(2001, 7, 26).getFullYear();
+    let age = new Date(new Date() - new Date(2001, 7, 26)).getFullYear() - 1970;
     document.getElementById('age').textContent = String(age);
 </script>
 </body>
