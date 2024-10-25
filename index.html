@@ -90,6 +90,26 @@
             width: 200px;
         }
 
+        #animation {
+            border-radius: 20px;
+            padding: 10px 20px;
+        }
+
+        #ticker {
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+        #ticker span {
+            display: inline-block;
+            padding-left: 100%;
+            animation: ticker-animation 60s linear infinite;
+        }
+        @keyframes ticker-animation {
+            0%   { transform: translateX(0%); }
+            100% { transform: translateX(-100%); }
+        }
     </style>
 </head>
 
@@ -98,6 +118,7 @@
     <div class="flex-row">
         <a href="#hi">> hello</a>
         <a href="#tools">> tools</a>
+        <a href="#work">> work</a>
         <a href="#contact">> contact</a>
     </div>
     <hr>
@@ -106,7 +127,7 @@
 <section id="hi">
     <div class="vertical-center">
         <img src="https://cdn.betterttv.net/emote/619887d054f3344f88067a2e/3x.webp" alt="hello!">
-        <p><span id="age"></span> y/o software engineer from AT</p>
+        <p><span id="age"></span> y/o software engineer from 🇦🇹</p>
         <p>I'm extracting code
             <span>
             <img style="margin-bottom: -6px"
@@ -118,29 +139,53 @@
                 )
             </span>
         </p>
-        <p>Rust, C, Java & TypeScript</p>
+        <p> made with <span><img src="https://cdn.betterttv.net/emote/6096a3d739b5010444d0dda0/1x.webp"
+                                 height="16px" width="16px" alt="love"></span> @
+            <a style="text-decoration: underline"
+               href="https://github.com/slyk26"
+               target="_blank">my github</a>
+        </p>
     </div>
 </section>
 
 <section id="tools">
     <div class="vertical-center">
-        <h1>I work with</h1>
+        <h1>I use these</h1>
         <div class="flex">
             <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/08/JetBrains_beam_logo.svg/1024px-JetBrains_beam_logo.svg.png"
-                 alt="intellij"
+                 alt="jetbrains tools"
                  height="128px" width="128px">
             <img src="https://cdn.betterttv.net/emote/5f2b045efe85fb4472d22853/3x.webp"
                  height="128px" width="128px" alt="vim">
             <img src="https://cdn.betterttv.net/emote/6047f5a6306b602acc599f22/3x.webp"
+                 alt="a lot of iq points" height="128px" width="128px">
+        </div>
+
+        <h1>to produce code in</h1>
+        <div class="flex">
+            <img src="https://www.rust-lang.org/logos/rust-logo-128x128.png"
+                 alt="Rust"
+                 height="128px" width="128px">
+            <img src="https://upload.wikimedia.org/wikipedia/de/thumb/e/e1/Java-Logo.svg/800px-Java-Logo.svg.png"
+                 height="128px" width="128px" alt="java">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Typescript.svg/1024px-Typescript.svg.png"
                  alt="giga brain" height="128px" width="128px">
         </div>
+    </div>
+</section>
+
+<section id="work">
+    <div class="vertical-center">
+        <h1>I don't do projects because I work fulltime lol</h1>
+
+        <p>... but check out my frontend skills here:</p>
+        <button id="animation" onclick="leAnimation()">press to animate</button>
     </div>
 </section>
 
 <section id="contact">
     <div class="vertical-center">
         <h1>Contact</h1>
-        <p> hook me up on discord lol </p>
         <div class="flex">
             <a href="mailto:slyk26@proton.me" target="_blank">
                 <div class="social">
@@ -160,17 +205,34 @@
     </div>
 </section>
 
-<footer class="footer">
-    <p> made with <span><img src="https://cdn.betterttv.net/emote/6096a3d739b5010444d0dda0/1x.webp"
-                             height="16px" width="16px" alt="love"></span> @
-        <a style="text-decoration: underline"
-           href="https://github.com/slyk26"
-           target="_blank">my github</a>
-    </p>
+<footer id="ticker" class="footer">
+    <span id="feed">
+    </span>
 </footer>
 <script>
     let age = new Date(new Date() - new Date(2001, 7, 26)).getFullYear() - 1970;
     document.getElementById('age').textContent = String(age);
+
+    const button = document.getElementById('animation');
+
+    button.addEventListener('mousedown', () => {
+        button.textContent = 'loading...';
+    });
+
+    const leAnimation = () => {
+        [...Array(2**32-1)].map(_=>Math.ceil(Math.random()*111))
+    }
+
+    const feed = "<pre> did you know I hate frontend stuff?                                                                       I chatgpt'd this animation...                                                                       all of this is 1 html file...                                                                       check out my github for a whopping 0 good projects! </pre>";
+
+    const tickerText = document.getElementById('feed');
+
+    function updateTicker() {
+        tickerText.innerHTML = feed;
+    }
+
+    setInterval(updateTicker, 60000);
+    updateTicker();
 </script>
 </body>
 </html>
